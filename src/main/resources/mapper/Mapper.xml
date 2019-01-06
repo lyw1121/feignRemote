@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.wyl.dao.userMapper">
+    <resultMap id="UserMap" type="com.example.wyl.model.User">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="dept" property="dept"/>
+        <id column="phone" property="phone"/>
+        <id column="uname" property="uname"/>
+        <id column="password" property="password"/>
+    </resultMap>
+
+    <select id="confirm" resultType="com.example.wyl.model.User" parameterType="com.example.wyl.model.User">
+        SELECT * FROM user WHERE uname=#{uname} and password=#{password}
+    </select>
+</mapper>
